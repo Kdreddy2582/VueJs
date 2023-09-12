@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <h1>{{}} ==> Interpolation</h1>
+    <div id="app">
+      <h1>{{greeting}}</h1>
+      <h2>{{name}}</h2>
+      <h2>
+        <a v-bind:href="link" target="_blank">vanmayitechnologies</a>
+      </h2>
+      <h2>
+        <a :href="link" target="_blank">vanmayitechnologies</a>
+      </h2>
+    </div>
+    {{greeting}}
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          greeting: "Hello Devender Good morning!", // Key and Value pair
+          name: "Ramana Reddy",
+          link: "https://vanmayitechnologies.com/",
+        },
+      });
+    </script>
+  </body>
+</html>
