@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <div style="padding: 25px; margin: 80px 30%; background-color: #c4c4c4;">
+      <h1>Two-Way Binding</h1>
+      <div id="app1">
+        <!-- <input type="text" v-model="nameBinding" />
+        <h2>You entered: {{ nameBinding }}</h2>
+        <h2>Type: {{ typeof nameBinding }}</h2> -->
+
+        <!-- <input type="text" v-model.number="nameBinding" />
+        <h2>You entered: {{ nameBinding }}</h2>
+        <h2>Type: {{ typeof nameBinding }}</h2> -->
+
+        <!-- <input type="text" v-model.trim="nameBinding" />
+        <h2>You entered: {{ nameBinding }}</h2>
+        <h2>Type: {{ typeof nameBinding }}</h2> -->
+        <input type="text" v-model.number.lazy="nameBinding" />
+        <h2>You entered: {{ nameBinding }}</h2>
+        <h2>Type: {{ typeof nameBinding }}</h2>
+      </div>
+
+      <hr />
+      <h1>Checkbox</h1>
+      <div id="app2">
+        <input type="checkbox" id="checkbox" v-model="isChecked" />
+        <label for="checkbox">{{ isChecked }}</label>
+      </div>
+
+      <hr />
+      <h1>Checkbox</h1>
+      <div id="app3">
+        <input type="checkbox" id="jack" value="Jack" v-model="checkedNames" />
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model="checkedNames" />
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkedNames" />
+        <label for="mike">Mike</label>
+        <br />
+        <span>Checked names: {{ checkedNames }}</span>
+      </div>
+      <hr />
+      <h1>Radio Button</h1>
+      <div id="app4">
+        <input type="radio" id="one" value="One" v-model="picked" />
+        <label for="one">One</label>
+        <br />
+        <input type="radio" id="two" value="Two" v-model="picked" />
+        <label for="two">Two</label>
+        <br />
+        <span>Picked: {{ picked }}</span>
+      </div>
+
+      <hr />
+      <h1>Select a Cities</h1>
+      <div id="app5">
+        <select v-model="selected">
+          <option disabled value="">Please select one</option>
+          <option>Hyderabad</option>
+          <option>Vizag</option>
+          <option>Srikakulam</option>
+        </select>
+        <span>Selected: {{ selected }}</span>
+      </div>
+    </div>
+    <script>
+      new Vue({
+        el: "#app1",
+        data: {
+          nameBinding: "",
+        },
+      });
+
+      new Vue({
+        el: "#app2",
+        data: {
+          isChecked: false,
+        },
+      });
+
+      new Vue({
+        el: "#app3",
+        data: {
+          checkedNames: [],
+        },
+      });
+
+      new Vue({
+        el: "#app4",
+        data: {
+          picked: "",
+        },
+      });
+
+      new Vue({
+        el: "#app5",
+        data: {
+          selected: "",
+        },
+      });
+    </script>
+  </body>
+</html>
