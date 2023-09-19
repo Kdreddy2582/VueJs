@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <!--clickFunction- camalCasing
+      Kebab Casing --click-function-->
+
+    <div id="app">
+      <!-- <button v-on:click="counter++">Increase</button>
+      <button v-on:click="counter--">Decrease</button> -->
+      <button @click="counter++">Increase</button>
+      <button @click="counter--">Decrease</button>
+      <h1>{{ counter }}</h1>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          counter: 0,
+        },
+      });
+    </script>
+  </body>
+</html>
