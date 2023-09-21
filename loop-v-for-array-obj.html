@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Student Data</h1>
+      <table border="1" cellpadding="8" cellspacing="0" width="400">
+        <tr>
+          <th>Student Id</th>
+          <th>Student Name</th>
+          <th>Branch</th>
+        </tr>
+        <tr v-for="student in students">
+          <td>{{ student.id }}</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.branch}}</td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          students: [
+            { name: "Tarun", branch: "MPC", id: 1001 },
+            { name: "Kanchana", branch: "MEC", id: 1002 },
+            { name: "Sankar", branch: "ECE", id: 1003 },
+            { name: "Jagadeesh", branch: "Diploma", id: 1004 },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Online Training Courses</h1>
+      <ul>
+        <li v-for="course in courses">{{ course }}</li>
+      </ul>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          courses: ["Java", "DotNet", "Php", "UI UX Developent", "Phyton"],
+        },
+      });
+    </script>
+  </body>
+</html>
