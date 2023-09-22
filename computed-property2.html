@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>About Vue Computed Propeties</h1>
+      <p>Income: {{income}}</p>
+      <p>Spend on House Needs: {{houseNeeds}}</p>
+      <p>Spend on Shopping: {{shopping}}</p>
+      <p>
+        After spend on house needs: {{ toHouse}}
+        <button v-on:click="houseNeeds += 50">House Needs</button>
+      </p>
+      <p>
+        After spend on Shopping: {{ toShop}}
+        <button v-on:click="shopping += 100">Shpping</button>
+      </p>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          income: 1000,
+          houseNeeds: 0,
+          shopping: 0,
+        },
+        computed: {
+          toHouse() {
+            console.log("Exe from house needs");
+            return this.income - this.houseNeeds;
+          },
+          toShop() {
+            console.log("Exe from shopping");
+            return this.income - this.shopping;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
